@@ -134,6 +134,7 @@ public class GameGGrid extends JPanel implements ItemListener{
         gameElement[index1] = new GameElement(e1.getLevel()+1, e1.getSet());
         jCheckBoxs[index1].setText(gameElement[index1].toString());
         jCheckBoxs[index1].setSelected(false);
+        MainGUI.topLabelSetText();
 
         generateNewElement(index2);
 
@@ -166,6 +167,7 @@ public class GameGGrid extends JPanel implements ItemListener{
         gameElement[spot] = getElement(MINLEVELGENERATED, MAXLEVELGENERATED);
         jCheckBoxs[spot].setText(gameElement[spot].toString());
         jCheckBoxs[spot].setSelected(false);
+        MainGUI.topLabelSetText();
     }
     public String submitMission(GameElement element){
         if(count==1)
@@ -175,8 +177,8 @@ public class GameGGrid extends JPanel implements ItemListener{
             {
                 if(selectedElements[i] != null && selectedElements[i].equals(element))
                 {   
-                    generateNewElement(i);
                     player.setIncrement("maple leaves", element.getPrice());
+                    generateNewElement(i);
                     return ": \n" + "submitted";
                 }
             }

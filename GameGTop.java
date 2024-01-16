@@ -12,15 +12,17 @@ public class GameGTop extends JPanel{
     BufferedImage moneyIcon;
     BufferedImage starIcon;
     
-    JLabel pName;
-    JLabel pMoney;
-    JLabel pStar;
+    static JLabel pName;
+    static JLabel pMoney; 
+    static JLabel pStar;
+    private static Player player;
     public GameGTop(Player player){
         setBounds(0,0,400,400);
         setLayout(new GridLayout(1,7));
         setVisible(true);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        GameGTop.player = player;
         //Profile picture
         try{
         pProfileP = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\logo.png"));
@@ -32,9 +34,9 @@ public class GameGTop extends JPanel{
             System.out.println("1"+e);
         } 
 
-        String n = player.name;
+        String n = GameGTop.player.getName();
         System.out.println(n);
-        pName = new JLabel("Player: "+player.name);
+        pName = new JLabel("Player: "+GameGTop.player.getName());
         pName.setText("Player: "+ n);
         this.add(pName);
 
@@ -50,7 +52,7 @@ public class GameGTop extends JPanel{
         } 
 
 
-        pMoney = new JLabel("Money: "+player.getValue("money"));
+        pMoney = new JLabel("Money: "+GameGTop.player.getValue("money"));
         this.add(pMoney);
 
         //Star icon
@@ -64,17 +66,21 @@ public class GameGTop extends JPanel{
             System.out.println("3"+e);
         } 
 
-        pStar = new JLabel("Maple leaves: "+ player.getValue("maple leaves"));
+        pStar = new JLabel("Maple leaves: "+ GameGTop.player.getValue("maple leaves"));
         this.add(pStar);
     }
     
-    public void setMoneyLabel(int amount)
+    public static void setNameLabel()
     {
-        pMoney.setText("Money: "+amount);
+        pName.setText("Name: "+GameGTop.player.getName());
     }
-    public void setMapleLeavesLabel(int amount)
+    public static void setMoneyLabel()
     {
-        pStar.setText("Maple leaves: "+amount);
+        pMoney.setText("Money: "+GameGTop.player.getValue("money"));
+    }
+    public static void setMapleLeavesLabel()
+    {
+        pStar.setText("Maple leaves: "+GameGTop.player.getValue("maple leaves"));
     }
     /*
     public static void main(String[] args) {

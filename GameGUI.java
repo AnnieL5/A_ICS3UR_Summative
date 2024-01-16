@@ -11,6 +11,7 @@ public class GameGUI extends JFrame{
     public static GameGGrid p;
     public static GameGRight rp;
     public static GameGLeftM lp;
+    private Player player;
 
     //Panel panel;
     public GameGUI(Player player){

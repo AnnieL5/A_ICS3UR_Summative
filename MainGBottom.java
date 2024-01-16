@@ -12,11 +12,11 @@ public class MainGBottom extends JPanel implements ActionListener{
     private JLabel jLabel;
     private JButton jButton;
     private JButton gameButton;
-    private final int[] REQUIREMENTS = {10, 10, 10};//the number of required maple leaves for each update
+    private final int[] REQUIREMENTS = {2, 5, 10, 15};//the number of required maple leaves for each update
     private BufferedReader br;
     private FileReader fr;
-    private final int LINE = 5;
-    private String[] story = new String[LINE];
+    private static final int LINE = 5;
+    private static String[] story = new String[LINE];
     private Player player;
     public MainGBottom(Player player)
     {
@@ -52,31 +52,41 @@ public class MainGBottom extends JPanel implements ActionListener{
         this.add(gameButton);
     }
     public void labelSetText(){
-        jLabel.setText(story[player.getValue("level")]);
+        jLabel.setText(MainGBottom.story[player.getValue("level")-1]);
     }
     public void buttonSetText(){
-        jButton.setText("Upgrade Community"+"\nRequired maple leaves: "+REQUIREMENTS[player.getValue("level")]);
+        jButton.setText("Upgrade Community"+"\nRequired maple leaves: "+REQUIREMENTS[player.getValue("level")-1]);
+    }
+    
+    public static String getEnding()
+    {
+        return MainGBottom.story[LINE-1];
     }
     @Override
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getSource() == jButton)
         {
-            if(player.getValue("maple leaves")>=REQUIREMENTS[player.getValue("level")])
+            if(player.getValue("maple leaves") >= REQUIREMENTS[player.getValue("level")-1])
             {
+                player.setIncrement("maple leaves", -1*REQUIREMENTS[player.getValue("level")-1]);
                 player.setIncrement("level", 1);
                 labelSetText();
                 buttonSetText();
-                MainGCenter.switchImage(player);
+                //MainGCenter.switchImage(player);
                 MainGUI.topLabelSetText();
             }
             else{
+                labelSetText();
+                buttonSetText();
+                MainGUI.topLabelSetText();
                 JOptionPane.showMessageDialog(null, "Not enough maple leaves.");
             }
         }
         else if(e.getSource() == gameButton)
         {
             Main.gg.setVisible(true);
+            GameGTop.setNameLabel();
         }
     }
 }

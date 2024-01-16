@@ -1,8 +1,9 @@
+import javax.swing.JOptionPane;
 
 public class Player {
     private int mapleLeaves;
     private int money;
-    public String name; //public because easy to access
+    private String name; //public because easy to access
     private int level;
     //rivate final int MAXSTEP;
     //private int remainStep;//the amount of steps each player have to attend it's mission
@@ -22,19 +23,28 @@ public class Player {
         //remainStep = MAXSTEP;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
     public void setIncrement(String type, int amount)
     {
         switch(type){
             case "maple leaves": mapleLeaves+=amount;
                          System.out.println("Increment by " +amount+ ", "+ type+ " is now "+mapleLeaves);
-                         GameGUI.tp.setMapleLeavesLabel(mapleLeaves);
+                         GameGTop.setMapleLeavesLabel();
                          break;
             case "money": money+=amount;
-                         System.out.println("Increment by " +amount+ type+ " is now "+money);
-                         GameGUI.tp.setMoneyLabel(money);
+                         System.out.println("Increment by " +amount+ ", "+ type+ " is now "+money);
+                         GameGTop.setMoneyLabel();
                          break;
             case "level": level+=amount;
-                         System.out.println("Increment by " +amount+ type+ " is now "+level);
+                         System.out.println("Increment by " +amount+ ", "+ type+ " is now "+level);
+                         if(level == 5){
+                            JOptionPane.showMessageDialog(null, "Congradulation!"+MainGBottom.getEnding());
+                         }
                          break;
             //case "remainStep": remainStep+=amount;
             //             System.out.println("Increment by " +amount+ type+ " is now "+remainStep);
@@ -55,7 +65,7 @@ public class Player {
 
     public String toString()
     {
-        return "\n\t Player "+ name+":\n\t Level: " +level+ "\n\tMaple Leaves:" +mapleLeaves+ "\n\tMoney: "+money;
+        return "\t Player "+ name+":\t      Level: " +level+ "\t    Maple Leaves:" +mapleLeaves+ "\t     Money: "+money;
     }
 }
 

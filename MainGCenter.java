@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 
 public class MainGCenter extends JPanel{
-    private final String[] FILEPATH = {"logo.png"};
+    private final String[] FILEPATH = {"E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\logo.png"};
     private final int NUM = FILEPATH.length;//number of pictures
     private final BufferedImage[] image;
     private static JLabel[] label;
@@ -36,6 +36,7 @@ public class MainGCenter extends JPanel{
             } 
         }
         jLabel = label[0];
+        this.add(jLabel);
     }
     public static void switchImage(Player player){
         jLabel = label[player.getValue("level")];

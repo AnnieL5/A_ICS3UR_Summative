@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class IntroGUI extends JFrame implements ActionListener{
     private JPanel top;
@@ -16,6 +17,7 @@ public class IntroGUI extends JFrame implements ActionListener{
     private JLabel infoLabel;
     private JLabel label;
     private JButton next;
+    private JTextField textInput;
 
     private Player player;
     public IntroGUI(Player player)
@@ -24,6 +26,8 @@ public class IntroGUI extends JFrame implements ActionListener{
         //setVisible(true);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        this.player = player;
         
         //Top 
         top = new JPanel();
@@ -40,11 +44,14 @@ public class IntroGUI extends JFrame implements ActionListener{
         //Center
         center = new JPanel();
         center.setVisible(true);
-        center.setLayout(new GridLayout(1, 0));
+        center.setLayout(new GridLayout(0, 1));
         this.add(center, BorderLayout.CENTER);
 
         label = new JLabel("Hi! Welcome to this game!\nEnter your name and click \"continue\"");
         center.add(label);
+
+        textInput = new JTextField("Input your name");
+        center.add(textInput);
 
         next = new JButton("Next");
         next.addActionListener(this);
@@ -53,7 +60,10 @@ public class IntroGUI extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == next){
-            new GameGUI(player);
+            String text = textInput.getText();
+            player.setName(text);
+            MainGUI.topLabelSetText();
+            Main.mg.setVisible(true);
         }
     }
 

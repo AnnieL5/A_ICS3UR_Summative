@@ -16,18 +16,18 @@ public class MainGUI extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         MainGUI.player = player;
-
-        topLabel = new JLabel(player.toString());
+        topLabel = new JLabel();
+        MainGUI.topLabelSetText();
         this.add(topLabel, BorderLayout.NORTH);
 
-        cp = new MainGCenter(player);
+        cp = new MainGCenter(MainGUI.player);
         this.add(cp, BorderLayout.CENTER);
 
-        bp = new MainGBottom(player);
+        bp = new MainGBottom(MainGUI.player);
         this.add(bp, BorderLayout.SOUTH);
     }
     public static void topLabelSetText()
     {
-        topLabel.setText(player.toString());
+        topLabel.setText(MainGUI.player.toString());
     }
 }
