@@ -27,7 +27,7 @@ public class GameGRight extends JPanel implements ActionListener{
         bSell.addActionListener(this);
         this.add(bSell);
 
-        bBack = new JButton("Back:\nClick and close this window");
+        bBack = new JButton("Back:\nClick");
         bBack.addActionListener(this);
         this.add(bBack);
 

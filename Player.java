@@ -43,7 +43,7 @@ public class Player {
             case "level": level+=amount;
                          System.out.println("Increment by " +amount+ ", "+ type+ " is now "+level);
                          if(level == 5){
-                            JOptionPane.showMessageDialog(null, "Congradulation!"+MainGBottom.getEnding());
+                            JOptionPane.showMessageDialog(null, "<html>Congradulation!"+MainGBottom.getEnding());
                          }
                          break;
             //case "remainStep": remainStep+=amount;

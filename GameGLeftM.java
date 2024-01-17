@@ -28,22 +28,24 @@ public class GameGLeftM extends JPanel implements ActionListener{
         jLabel = new JLabel("Missions: ");
         this.add(jLabel);
         
-        b1 = new JButton(missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
+        b1 = new JButton("<html>"+missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
         count++;
         b1.addActionListener(this);
         this.add(b1);
 
-        b2 = new JButton(missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
+        b2 = new JButton("<html>"+missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
         count++;
         b2.addActionListener(this);
         this.add(b2);
 
-        b3 = new JButton(missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
+        b3 = new JButton("<html>"+missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
         count++;
         b3.addActionListener(this);
         this.add(b3);
 
     }
+
+    //public void addMission(JButton jbutton, )
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -52,7 +54,7 @@ public class GameGLeftM extends JPanel implements ActionListener{
             if(b1State == false)
             {
                 b1.setText(b1.getText()+GameGUI.p.submitMission(missions[0]));
-                if(b1.getText() == b1.getText()+": \nsubmitted")
+                if(b1.getText() == b1.getText()+": <br>submitted")
                 {
                     b1State = true;
                 }
@@ -66,7 +68,7 @@ public class GameGLeftM extends JPanel implements ActionListener{
             if(b2State == false)
             {
                 b2.setText(b2.getText()+GameGUI.p.submitMission(missions[1]));
-                if(b2.getText() == b2.getText()+": \nsubmitted")
+                if(b2.getText() == b2.getText()+": <br>submitted")
                 {
                     b2State = true;
                 }
@@ -81,7 +83,7 @@ public class GameGLeftM extends JPanel implements ActionListener{
             if(b3State == false)
             {
                 b3.setText(b3.getText()+GameGUI.p.submitMission(missions[2]));
-                if(b3.getText() == b3.getText()+": \nsubmitted")
+                if(b3.getText() == b3.getText()+": <br>submitted")
                 {
                     b3State = true;
                 }

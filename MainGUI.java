@@ -7,6 +7,7 @@ public class MainGUI extends JFrame{
     static JLabel topLabel;
     public static MainGCenter cp;
     public static MainGBottom bp;
+    public static MainGRight rp;
     private static Player player;
     public MainGUI(Player player)
     {
@@ -25,6 +26,9 @@ public class MainGUI extends JFrame{
 
         bp = new MainGBottom(MainGUI.player);
         this.add(bp, BorderLayout.SOUTH);
+
+        rp = new MainGRight(MainGUI.player);
+        this.add(rp, BorderLayout.EAST);
     }
     public static void topLabelSetText()
     {
