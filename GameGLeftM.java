@@ -14,8 +14,7 @@ public class GameGLeftM extends JPanel implements ActionListener{
     private boolean b2State = false;
     private JButton b3;
     private boolean b3State = false;
-    public final GameElement[] missions = {GameConstant.book.getElement(2), GameConstant.house.getElement(1), GameConstant.book.getElement(1)};
-    private int count=0;
+    public final GameElement[] missions = new GameElement[3];
 
 
     public GameGLeftM()
@@ -28,70 +27,51 @@ public class GameGLeftM extends JPanel implements ActionListener{
         jLabel = new JLabel("Missions: ");
         this.add(jLabel);
         
-        b1 = new JButton("<html>"+missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
-        count++;
+        b1 = new JButton();
+        addMission(b1, 1);
         b1.addActionListener(this);
         this.add(b1);
 
-        b2 = new JButton("<html>"+missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
-        count++;
+        b2 = new JButton();
+        addMission(b2, 2);
         b2.addActionListener(this);
         this.add(b2);
 
-        b3 = new JButton("<html>"+missions[count].toString()+"\n Maple leaves: "+missions[count].getPrice());
-        count++;
+        b3 = new JButton();
+        addMission(b3, 3);
         b3.addActionListener(this);
         this.add(b3);
 
     }
 
-    //public void addMission(JButton jbutton, )
+    public void addMission(JButton jbutton, int numOfButton)
+    {
+        missions[numOfButton-1] = GameConstant.getRandomElement();
+        jbutton.setText("<html>"+missions[numOfButton-1].toString()+"\n Maple leaves: "+missions[numOfButton-1].getPrice());
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == b1)
         {
-            if(b1State == false)
+            if(GameGUI.p.submitMission(missions[0]) == true)
             {
-                b1.setText(b1.getText()+GameGUI.p.submitMission(missions[0]));
-                if(b1.getText() == b1.getText()+": <br>submitted")
-                {
-                    b1State = true;
-                }
-            }
-            else{
-                JOptionPane.showMessageDialog(null,"Already submitted");
+                addMission(b1, 1);
             }
         }
         else if(e.getSource() == b2)
         {
-            if(b2State == false)
+            if(GameGUI.p.submitMission(missions[1]) == true)
             {
-                b2.setText(b2.getText()+GameGUI.p.submitMission(missions[1]));
-                if(b2.getText() == b2.getText()+": <br>submitted")
-                {
-                    b2State = true;
-                }
-            }
-            else{
-                JOptionPane.showMessageDialog(null,"Already submitted");
+                addMission(b2, 2);
             }
         }
         else if(e.getSource() == b3)
         {
-            System.out.println("Here");
-            if(b3State == false)
+            if(GameGUI.p.submitMission(missions[2]) == true)
             {
-                b3.setText(b3.getText()+GameGUI.p.submitMission(missions[2]));
-                if(b3.getText() == b3.getText()+": <br>submitted")
-                {
-                    b3State = true;
-                }
-            }
-            else{
-                JOptionPane.showMessageDialog(null,"Already submitted");
+                addMission(b3, 3);
             }
         }
-        
     }
 }

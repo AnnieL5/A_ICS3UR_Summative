@@ -25,9 +25,9 @@ public class GameGTop extends JPanel{
         GameGTop.player = player;
         //Profile picture
         try{
-        pProfileP = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\logo.png"));
+        pProfileP = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\player.png"));
         JLabel picLabel = new JLabel(new ImageIcon(pProfileP));
-        picLabel.setBounds(0,0,100,200);
+        picLabel.setBounds(0,0,50,50);
         this.add(picLabel);
         }
         catch(IOException e){
@@ -42,7 +42,7 @@ public class GameGTop extends JPanel{
 
         //Money icon
         try{
-        moneyIcon = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\logo.png"));
+        moneyIcon = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\money.png"));
         JLabel picLabel = new JLabel(new ImageIcon(moneyIcon));
         picLabel.setBounds(0,0,100,200);
         this.add(picLabel);
@@ -57,7 +57,7 @@ public class GameGTop extends JPanel{
 
         //Star icon
         try{
-        starIcon = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\logo.png"));
+        starIcon = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\maple leaves.png"));
         JLabel picLabel = new JLabel(new ImageIcon(starIcon));
         picLabel.setBounds(0,0,100,200);
         this.add(picLabel);

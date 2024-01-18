@@ -38,7 +38,7 @@ public class GameGGrid extends JPanel implements ItemListener{
         gameElement[3] = getElement(MINLEVELGENERATED, MAXLEVELGENERATED);
         
         //Add the top row: Label
-        jLabel = new JLabel("Select two items");
+        jLabel = new JLabel("<html>Select two items");
         this.add(jLabel);
 
         this.add(new JLabel(""));
@@ -86,7 +86,7 @@ public class GameGGrid extends JPanel implements ItemListener{
         for (String line:label){
             text += line;
         }
-        jLabel.setText("Item selected: "+text);
+        jLabel.setText("<html>Item selected: "+text);
     }
 
     public void combineElements(){
@@ -169,7 +169,7 @@ public class GameGGrid extends JPanel implements ItemListener{
         jCheckBoxs[spot].setSelected(false);
         MainGUI.topLabelSetText();
     }
-    public String submitMission(GameElement element){
+    public boolean submitMission(GameElement element){
         if(count==1)
         {
             System.out.println(count);
@@ -179,15 +179,15 @@ public class GameGGrid extends JPanel implements ItemListener{
                 {   
                     player.setIncrement("maple leaves", element.getPrice());
                     generateNewElement(i);
-                    return ": \n" + "submitted";
+                    return true;
                 }
             }
             JOptionPane.showMessageDialog(null,"The elements do not match.");
-            return "";
+            return false;
         }
         else{
             JOptionPane.showMessageDialog(null,"You can only select 1 checkbox.");
-            return "";
+            return false;
         }
     }
     /*
