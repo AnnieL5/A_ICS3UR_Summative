@@ -2,8 +2,7 @@ import java.awt.BorderLayout;
 import javax.swing.*;
 
 public class GameGUI extends JFrame{
-    JButton jButton;
-    JLabel jLabel;
+    //GUI frame that groups all panels
 
     public static GameGTop tp;
     public static GameGGrid p;
@@ -29,10 +28,4 @@ public class GameGUI extends JFrame{
         lp = new GameGLeftM();
         this.add(lp, BorderLayout.WEST);
     }
-    
-    /*
-    public static void main(String[] args) {
-        new GUIGame();
-    }
-    */
 }

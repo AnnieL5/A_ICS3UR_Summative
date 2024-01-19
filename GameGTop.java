@@ -1,4 +1,3 @@
-
 import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -8,9 +7,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class GameGTop extends JPanel{
-    BufferedImage pProfileP;
-    BufferedImage moneyIcon;
-    BufferedImage starIcon;
+    //Top bar in Game frame
+    //Add images
+    private BufferedImage pProfileP;
+    private BufferedImage moneyIcon;
+    private BufferedImage starIcon;
     
     static JLabel pName;
     static JLabel pMoney; 
@@ -20,7 +21,6 @@ public class GameGTop extends JPanel{
         setBounds(0,0,400,400);
         setLayout(new GridLayout(1,7));
         setVisible(true);
-        //setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         GameGTop.player = player;
         //Profile picture
@@ -33,7 +33,7 @@ public class GameGTop extends JPanel{
         catch(IOException e){
             System.out.println("1"+e);
         } 
-
+        //Label
         String n = GameGTop.player.getName();
         System.out.println(n);
         pName = new JLabel("Player: "+GameGTop.player.getName());
@@ -50,12 +50,11 @@ public class GameGTop extends JPanel{
         catch(IOException e){
             System.out.println("2"+e);
         } 
-
-
+        //Label
         pMoney = new JLabel("Money: "+GameGTop.player.getValue("money"));
         this.add(pMoney);
 
-        //Star icon
+        //Maple leave icon
         try{
         starIcon = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\maple leaves.png"));
         JLabel picLabel = new JLabel(new ImageIcon(starIcon));
@@ -65,11 +64,12 @@ public class GameGTop extends JPanel{
         catch(IOException e){
             System.out.println("3"+e);
         } 
-
+        //Label
         pStar = new JLabel("Maple leaves: "+ GameGTop.player.getValue("maple leaves"));
         this.add(pStar);
     }
     
+    //Setter
     public static void setNameLabel()
     {
         pName.setText("Name: "+GameGTop.player.getName());
@@ -82,9 +82,4 @@ public class GameGTop extends JPanel{
     {
         pStar.setText("Maple leaves: "+GameGTop.player.getValue("maple leaves"));
     }
-    /*
-    public static void main(String[] args) {
-        new TopPanel();
-    }
-    */
 }

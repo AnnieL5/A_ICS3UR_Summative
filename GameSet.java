@@ -1,5 +1,6 @@
 
 public class GameSet {
+    //Game set of the same type that includes a group of 
     private final String NAME;
     private final int NUMOFELEMENT = 4;
     private final GameElement[] set = new GameElement[4];
@@ -28,13 +29,11 @@ public class GameSet {
 
     public GameElement getRandomSetElement(){
         int i = (int)(Math.random()*(NUMOFELEMENT));
-        //System.out.println(i);
         return new GameElement(set[i].getLevel(), set[i].getSet());
     }
     public GameElement getRandomSetElement(int minLevel, int maxLevel){
         //Get a random element within a range of levels. Including the minium and excluding the maximum.
         int i = (int)(Math.random()*(maxLevel-minLevel))+minLevel-1;
-        //System.out.println(i);
         return new GameElement(set[i].getLevel(), set[i].getSet());
     }
 }

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainGRight extends JPanel implements ActionListener{
+    //Right panel in the main frame
     private final int[] REQUIREMENTS = {10, 10, 10, 10};//the number of required maple leaves for each update
     private static JButton jButton;
     private JButton gameButton;
@@ -27,6 +28,7 @@ public class MainGRight extends JPanel implements ActionListener{
         gameButton.addActionListener(this);
         this.add(gameButton);
     }
+    //Renew text
     public void buttonSetText(){
         MainGRight.jButton.setText("<html>Upgrade Community"+"<br>Required maple leaves: "+REQUIREMENTS[MainGRight.player.getValue("level")-1]);
     }
@@ -35,15 +37,16 @@ public class MainGRight extends JPanel implements ActionListener{
     {
         if(e.getSource() == jButton)
         {
+            //upgrade community
             if(MainGRight.player.getValue("maple leaves") >= REQUIREMENTS[MainGRight.player.getValue("level")-1])
             {
                 MainGRight.player.setIncrement("maple leaves", -1*REQUIREMENTS[MainGRight.player.getValue("level")-1]);
                 MainGRight.player.setIncrement("level", 1);
+                //Renew all label
                 MainGBottom.labelSetText();
                 buttonSetText();
                 MainGUI.topLabelSetText();
                 MainGUI.cp.switchImage(player);
-                System.out.println("1Here");
             }
             else{
                 MainGBottom.labelSetText();
@@ -54,6 +57,7 @@ public class MainGRight extends JPanel implements ActionListener{
         }
         else if(e.getSource() == gameButton)
         {
+            //Go to game frame
             Main.gg.setVisible(true);
             GameGTop.setNameLabel();
         }
