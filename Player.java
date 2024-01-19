@@ -42,7 +42,7 @@ public class Player {
                          break;
             case "level": level+=amount;
                          System.out.println("Increment by " +amount+ ", "+ type+ " is now "+level);
-                         if(level == 5){
+                         if(level >= 5){
                             JOptionPane.showMessageDialog(null, "<html>Congradulation!"+MainGBottom.getEnding());
                          }
                          break;

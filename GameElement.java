@@ -6,6 +6,7 @@ public class GameElement{
     private String description;
     
     public GameElement(int level, String set){
+        //the price is 10 times its level
         this(level, set, (level*10), null);
         description = toString();
     }

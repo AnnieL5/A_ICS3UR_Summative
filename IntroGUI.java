@@ -71,6 +71,7 @@ public class IntroGUI extends JFrame implements ActionListener{
             player.setName(text);
             MainGUI.topLabelSetText();
             Main.mg.setVisible(true);
+            new InstructionGUI();
         }
     }
 
