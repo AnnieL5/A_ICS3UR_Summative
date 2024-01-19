@@ -1,4 +1,5 @@
 
+import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -10,35 +11,50 @@ import javax.swing.JPanel;
 
 
 public class MainGCenter extends JPanel{
-    private final String[] FILEPATH = {"E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\logo.png"};
+    private static final String[] FILEPATH = {"E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\1.jpg",
+    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\2.jpeg", 
+    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\3.jpg",
+    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\4.jpg", 
+    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\5.jpeg"};
     private final int NUM = FILEPATH.length;//number of pictures
-    private final BufferedImage[] image;
-    private static JLabel[] label;
-    private static JLabel jLabel;
+    private static BufferedImage[] image;
+    private JLabel[] label;
+    private JLabel jLabel;
+    //private ImageIcon icon;
 
     public MainGCenter(Player player)
     {
+        //Panel set up
         setVisible(true);
-        setLayout(null);
+        setLayout(new FlowLayout());
 
+        // icon = new ImageIcon(FILEPATH[0]);
+        // JLabel j = new JLabel(icon);
+        // this.add(j);
+        //Init the array of image
         image = new BufferedImage[NUM];
         label = new JLabel[NUM];
+
+        //Label image
+        jLabel = new JLabel();
         for(int i=0; i<NUM; i++)
         {
             try{
             image[i] = ImageIO.read(new File(FILEPATH[i]));
             label[i] = new JLabel(new ImageIcon(image[i]));
             label[i].setBounds(0,0,100,200);
-            //this.add(picLabel);
+            //this.add(label[i]);
             }
             catch(IOException e){
                 System.out.println(e);
             } 
         }
-        jLabel = label[0];
+        switchImage(player);
         this.add(jLabel);
     }
-    public static void switchImage(Player player){
-        jLabel = label[player.getValue("level")];
+    public void switchImage(Player player){
+        System.out.println("Level"+ (player.getValue("level")-1));
+        jLabel.setIcon(new ImageIcon(image[player.getValue("level")-1]));
+        //MainGUI.cp.repaint();
     }
 }

@@ -41,8 +41,9 @@ public class MainGRight extends JPanel implements ActionListener{
                 MainGRight.player.setIncrement("level", 1);
                 MainGBottom.labelSetText();
                 buttonSetText();
-                //MainGCenter.switchImage(player);
                 MainGUI.topLabelSetText();
+                MainGUI.cp.switchImage(player);
+                System.out.println("1Here");
             }
             else{
                 MainGBottom.labelSetText();

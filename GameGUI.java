@@ -1,6 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
-
 import javax.swing.*;
 
 public class GameGUI extends JFrame{
@@ -11,18 +9,14 @@ public class GameGUI extends JFrame{
     public static GameGGrid p;
     public static GameGRight rp;
     public static GameGLeftM lp;
-    private Player player;
 
     //Panel panel;
     public GameGUI(Player player){
         setBounds(0,0,1000,600);
-        //setVisible(true);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // JButton jb = new JButton("OO");
-        // this.add(jb);
-
+        //Create panel objects
         tp = new GameGTop(player);
         this.add(tp,BorderLayout.NORTH);
 
