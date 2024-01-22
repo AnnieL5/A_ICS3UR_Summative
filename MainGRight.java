@@ -52,7 +52,7 @@ public class MainGRight extends JPanel implements ActionListener{
                 MainGBottom.labelSetText();
                 buttonSetText();
                 MainGUI.topLabelSetText();
-                JOptionPane.showMessageDialog(null, "Not enough maple leaves.");
+                JOptionPane.showMessageDialog(null, "<html>Not enough maple leaves. <br>Go to the game panel to get more.");
             }
         }
         else if(e.getSource() == gameButton)
