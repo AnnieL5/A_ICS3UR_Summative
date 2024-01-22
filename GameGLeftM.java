@@ -7,24 +7,20 @@ import javax.swing.*;
 
 
 public class GameGLeftM extends JPanel implements ActionListener{
+    //Left mission bar in the game panel
     private JLabel jLabel;
     private JButton b1;
-    private boolean b1State = false;
     private JButton b2;
-    private boolean b2State = false;
     private JButton b3;
-    private boolean b3State = false;
     public final GameElement[] missions = new GameElement[3];
-
 
     public GameGLeftM()
     {
         setLayout(new GridLayout(0,1));
         setVisible(true);
         setBounds(0,0,500,500);
-        //setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        jLabel = new JLabel("Missions: ");
+        jLabel = new JLabel("<html>Missions: <br>(Click to submit)");
         this.add(jLabel);
         
         b1 = new JButton();
@@ -46,14 +42,16 @@ public class GameGLeftM extends JPanel implements ActionListener{
 
     public void addMission(JButton jbutton, int numOfButton)
     {
+        //Get/replace a mission
         missions[numOfButton-1] = GameConstant.getRandomElement();
-        jbutton.setText("<html>"+missions[numOfButton-1].toString()+"\n Maple leaves: "+missions[numOfButton-1].getPrice());
+        jbutton.setText("<html>Requirement: "+missions[numOfButton-1].toString()+"<br> Given maple leaves: "+missions[numOfButton-1].getPrice());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == b1)
         {
+            //if submit successful
             if(GameGUI.p.submitMission(missions[0]) == true)
             {
                 addMission(b1, 1);

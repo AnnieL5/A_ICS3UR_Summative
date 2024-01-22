@@ -5,9 +5,7 @@ public class Player {
     private int money;
     private String name; //public because easy to access
     private int level;
-    //rivate final int MAXSTEP;
-    //private int remainStep;//the amount of steps each player have to attend it's mission
-
+    
     //constructors
     public Player()
     {
@@ -19,8 +17,6 @@ public class Player {
         mapleLeaves = 0;
         money = 150;
         level = 1;
-        //MAXSTEP = 30;
-        //remainStep = MAXSTEP;
     }
 
     public void setName(String name){
@@ -31,6 +27,7 @@ public class Player {
     }
     public void setIncrement(String type, int amount)
     {
+        // A setter method so is not needed to create more seperate methods
         switch(type){
             case "maple leaves": mapleLeaves+=amount;
                          System.out.println("Increment by " +amount+ ", "+ type+ " is now "+mapleLeaves);
@@ -46,14 +43,12 @@ public class Player {
                             JOptionPane.showMessageDialog(null, "<html>Congradulation!"+MainGBottom.getEnding());
                          }
                          break;
-            //case "remainStep": remainStep+=amount;
-            //             System.out.println("Increment by " +amount+ type+ " is now "+remainStep);
-            //             break;
             default: System.out.println("Wrong type.");
         }
     }
 
     public int getValue(String type){
+        //Getter method. Easier so won't have to create seperate methods
         switch(type){
             case "maple leaves": return mapleLeaves;
             case "money": return money;

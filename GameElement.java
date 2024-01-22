@@ -3,20 +3,17 @@ public class GameElement{
     private final String SET;
     private final int PRICE;//Price to purchase it. When recieve one, output (price/10)coins
     private boolean isActivated = false;
-    private String description;
     
     public GameElement(int level, String set){
         //the price is 10 times its level
-        this(level, set, (level*10), null);
-        description = toString();
+        this(level, set, (level*10));
     }
 
-    public GameElement(int level, String set, int price, String description)
+    public GameElement(int level, String set, int price)
     {
         LEVEL = level;
         SET = set;
         PRICE = price;
-        this.description = description;
     }
 
     //Getter

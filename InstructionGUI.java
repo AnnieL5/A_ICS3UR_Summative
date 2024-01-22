@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class InstructionGUI extends JFrame{
+    //A frame to give instructions
     private BufferedImage main;
     private BufferedImage game;
     
@@ -25,7 +26,7 @@ public class InstructionGUI extends JFrame{
         this.add(picLabel);
         }
         catch(IOException e){
-            System.out.println("3"+e);
+            System.out.println(e);
         } 
 
         //Game instruction
@@ -36,7 +37,7 @@ public class InstructionGUI extends JFrame{
             this.add(picLabel);
             }
         catch(IOException e){
-                System.out.println("3"+e);
+                System.out.println(e);
         } 
     }
 }

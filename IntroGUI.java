@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class IntroGUI extends JFrame implements ActionListener{
+    //Introduction frame
     private JPanel top;
     private JPanel center;
     private JButton infoButton; 
@@ -39,6 +40,7 @@ public class IntroGUI extends JFrame implements ActionListener{
         infoButton = new JButton("Info");
         infoButton.setBounds(0,0,40, 40);
         infoButton.addActionListener(this);
+        
         infoLabel = new JLabel("Click for the description of this game");
         top.add(infoButton);
         top.add(infoLabel);
@@ -67,11 +69,13 @@ public class IntroGUI extends JFrame implements ActionListener{
             JOptionPane.showMessageDialog(null, INFOTEXT);
         }
         else if(e.getSource() == next){
+            //Go to the next frame
             String text = textInput.getText();
             player.setName(text);
             MainGUI.topLabelSetText();
             Main.mg.setVisible(true);
             new InstructionGUI();
+            JOptionPane.showMessageDialog(null, "<html>Please follow the story line to ungrading the community <br>and achive the ultimate goal of building a school in the Indigenous comunity.");
         }
     }
 

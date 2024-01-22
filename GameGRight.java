@@ -1,23 +1,19 @@
-
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-
 public class GameGRight extends JPanel implements ActionListener{
+    //Right bar in game frame
     private JButton bCombine;
     private JButton bSell;
     private JButton bBack;
-
-    private Player player;
 
     public GameGRight(Player player){
         setLayout(new GridLayout(0,1));
         setVisible(true);
         setBounds(0,0,500,500);
-        //setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         bCombine = new JButton("Combine elements");
         bCombine.addActionListener(this);
@@ -45,12 +41,7 @@ public class GameGRight extends JPanel implements ActionListener{
         else if(e.getSource() == bBack)
         {
             Main.mg.setVisible(true);
-            //new MainGUI(player);
         }
         
     }
-    
-    //public static void main(String[] args) {
-     //   new RightPanel();
-    //}
 }

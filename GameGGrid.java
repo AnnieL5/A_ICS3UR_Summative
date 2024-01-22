@@ -23,7 +23,6 @@ public class GameGGrid extends JPanel implements ItemListener{
 
         setVisible(true);
         setBounds(0,0,200,200);
-        //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridLayout(2, 4));
 
         this.player = player;
@@ -62,11 +61,8 @@ public class GameGGrid extends JPanel implements ItemListener{
                     if(count<MAXITEMSELECT){
                         count++;
                         selectedElements[i] = gameElement[i];
-                        //System.out.println(str);
-                        //str.replaceAll(str, "Obj"+String.valueOf(num));
                         label[i] = gameElement[i].toString()+" ";
-                        //System.out.println(str);
-                    }
+                        }
                     else{
                         System.out.println("You can't choose more than 2");
                         jCheckBoxs[i].setSelected(false);
@@ -90,24 +86,20 @@ public class GameGGrid extends JPanel implements ItemListener{
     }
 
     public void combineElements(){
-        System.out.println("Here");
         if(count == 2)
         {
             if(player.getValue("money")>COSTOFELEMENT)
             {
                 int selected;
-                System.out.println("Here");
                 for(int i=0; i<NUM; i++)
                 {
                     if(selectedElements[i] != null)
                     {   
-                        System.out.println("Here");
                         selected = i;
                         for(int j=i+1; i<NUM; j++)
                         {
                             if(selectedElements[j] != null)
                             {
-                                System.out.println("Here");
                                 if(selectedElements[j].equals(selectedElements[selected]))
                                 {   upgrade(selectedElements[i], selectedElements[j], i, j);}
                                 else{
@@ -130,15 +122,12 @@ public class GameGGrid extends JPanel implements ItemListener{
     }
     private void upgrade(GameElement e1, GameElement e2, int index1, int index2){
         //new
-        System.out.println("Here");
         gameElement[index1] = new GameElement(e1.getLevel()+1, e1.getSet());
         jCheckBoxs[index1].setText(gameElement[index1].toString());
         jCheckBoxs[index1].setSelected(false);
         MainGUI.topLabelSetText();
 
         generateNewElement(index2);
-
-        //System.out.println("Here");
     }
     public GameElement getRandomGRIDElement()
     {
@@ -155,7 +144,6 @@ public class GameGGrid extends JPanel implements ItemListener{
             for(int i=0; i<NUM; i++){
                 if(selectedElements[i] != null){
                     int price = selectedElements[i].getPrice();
-                    System.out.println(price);
                     player.setIncrement("money", price);
                     generateNewElement(i);
                 }
@@ -172,7 +160,7 @@ public class GameGGrid extends JPanel implements ItemListener{
     public boolean submitMission(GameElement element){
         if(count==1)
         {
-            System.out.println(count);
+            System.out.println("Number of selected element: "+count);
             for(int i=0; i<NUM; i++)
             {
                 if(selectedElements[i] != null && selectedElements[i].equals(element))

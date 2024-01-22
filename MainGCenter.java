@@ -20,7 +20,6 @@ public class MainGCenter extends JPanel{
     private static BufferedImage[] image;
     private JLabel[] label;
     private JLabel jLabel;
-    //private ImageIcon icon;
 
     public MainGCenter(Player player)
     {
@@ -28,10 +27,6 @@ public class MainGCenter extends JPanel{
         setVisible(true);
         setLayout(new FlowLayout());
 
-        // icon = new ImageIcon(FILEPATH[0]);
-        // JLabel j = new JLabel(icon);
-        // this.add(j);
-        //Init the array of image
         image = new BufferedImage[NUM];
         label = new JLabel[NUM];
 
@@ -43,7 +38,6 @@ public class MainGCenter extends JPanel{
             image[i] = ImageIO.read(new File(FILEPATH[i]));
             label[i] = new JLabel(new ImageIcon(image[i]));
             label[i].setBounds(0,0,100,200);
-            //this.add(label[i]);
             }
             catch(IOException e){
                 System.out.println(e);
@@ -52,9 +46,8 @@ public class MainGCenter extends JPanel{
         switchImage(player);
         this.add(jLabel);
     }
+    //Renew image
     public void switchImage(Player player){
-        System.out.println("Level"+ (player.getValue("level")-1));
         jLabel.setIcon(new ImageIcon(image[player.getValue("level")-1]));
-        //MainGUI.cp.repaint();
     }
 }

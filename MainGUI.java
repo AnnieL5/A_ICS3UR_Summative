@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import javax.swing.*;
 
 public class MainGUI extends JFrame{
+    //Frame for main that includes all panels
     static JLabel topLabel;
     public static MainGCenter cp;
     public static MainGBottom bp;
@@ -11,12 +12,12 @@ public class MainGUI extends JFrame{
     private static Player player;
     public MainGUI(Player player)
     {
-        setBounds(0,0,1000,1000);
-        //setVisible(true);
+        setBounds(0,0,1000,800);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         MainGUI.player = player;
+
         topLabel = new JLabel();
         MainGUI.topLabelSetText();
         this.add(topLabel, BorderLayout.NORTH);
@@ -30,6 +31,7 @@ public class MainGUI extends JFrame{
         rp = new MainGRight(MainGUI.player);
         this.add(rp, BorderLayout.EAST);
     }
+    //Renew text
     public static void topLabelSetText()
     {
         topLabel.setText(MainGUI.player.toString());
