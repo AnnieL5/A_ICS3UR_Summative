@@ -75,6 +75,7 @@ public class IntroGUI extends JFrame implements ActionListener{
             MainGUI.topLabelSetText();
             Main.mg.setVisible(true);
             new InstructionGUI();
+            JOptionPane.showMessageDialog(null, "<html>Please follow the story line to ungrading the community <br>and achive the ultimate goal of building a school in the Indigenous comunity.");
         }
     }
 

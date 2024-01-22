@@ -48,7 +48,6 @@ public class MainGCenter extends JPanel{
     }
     //Renew image
     public void switchImage(Player player){
-        System.out.println("Level"+ (player.getValue("level")-1));
         jLabel.setIcon(new ImageIcon(image[player.getValue("level")-1]));
     }
 }

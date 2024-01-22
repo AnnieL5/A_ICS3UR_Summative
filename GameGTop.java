@@ -35,7 +35,6 @@ public class GameGTop extends JPanel{
         } 
         //Label
         String n = GameGTop.player.getName();
-        System.out.println(n);
         pName = new JLabel("Player: "+GameGTop.player.getName());
         pName.setText("Player: "+ n);
         this.add(pName);

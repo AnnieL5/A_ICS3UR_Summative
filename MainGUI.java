@@ -12,7 +12,7 @@ public class MainGUI extends JFrame{
     private static Player player;
     public MainGUI(Player player)
     {
-        setBounds(0,0,1000,1000);
+        setBounds(0,0,1000,800);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 

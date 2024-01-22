@@ -20,7 +20,7 @@ public class GameGLeftM extends JPanel implements ActionListener{
         setVisible(true);
         setBounds(0,0,500,500);
 
-        jLabel = new JLabel("Missions: ");
+        jLabel = new JLabel("<html>Missions: <br>(Click to submit)");
         this.add(jLabel);
         
         b1 = new JButton();
@@ -44,7 +44,7 @@ public class GameGLeftM extends JPanel implements ActionListener{
     {
         //Get/replace a mission
         missions[numOfButton-1] = GameConstant.getRandomElement();
-        jbutton.setText("<html>"+missions[numOfButton-1].toString()+"\n Maple leaves: "+missions[numOfButton-1].getPrice());
+        jbutton.setText("<html>Requirement: "+missions[numOfButton-1].toString()+"<br> Given maple leaves: "+missions[numOfButton-1].getPrice());
     }
 
     @Override

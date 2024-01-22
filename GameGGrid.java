@@ -128,8 +128,6 @@ public class GameGGrid extends JPanel implements ItemListener{
         MainGUI.topLabelSetText();
 
         generateNewElement(index2);
-
-        //System.out.println("Here");
     }
     public GameElement getRandomGRIDElement()
     {
@@ -162,7 +160,7 @@ public class GameGGrid extends JPanel implements ItemListener{
     public boolean submitMission(GameElement element){
         if(count==1)
         {
-            System.out.println(count);
+            System.out.println("Number of selected element: "+count);
             for(int i=0; i<NUM; i++)
             {
                 if(selectedElements[i] != null && selectedElements[i].equals(element))
