@@ -9,6 +9,7 @@ import javax.swing.*;
 public class GameGGrid extends JPanel implements ItemListener{
     private final int NUM = 4;//number of checkboxs
     private JLabel jLabel;
+    private JLabel instruction;
     private JCheckBox[] jCheckBoxs;
     private String[] label = {"", "", "", ""};
     private GameElement[] gameElement;
@@ -40,9 +41,10 @@ public class GameGGrid extends JPanel implements ItemListener{
         jLabel = new JLabel("<html>Select two items");
         this.add(jLabel);
 
-        this.add(new JLabel(""));
-        this.add(new JLabel(""));
-        this.add(new JLabel(""));
+        instruction = new JLabel("<html>Complete the missions to gain maple leaves. <br>Combine 2 elements of the same type to upgrade it.");
+        this.add(instruction);
+        this.add(new JLabel("<html>i.e. to get a book[level 3], combine 2 book[level 2]s"));
+        this.add(new JLabel("<html>Every element generated in the grid cost $10. Selling an element will give you 10 times its level of money."));
 
         for(int i=0; i<NUM; i++)
         {
@@ -103,7 +105,7 @@ public class GameGGrid extends JPanel implements ItemListener{
                                 if(selectedElements[j].equals(selectedElements[selected]))
                                 {   upgrade(selectedElements[i], selectedElements[j], i, j);}
                                 else{
-                                    JOptionPane.showMessageDialog(null,"Please select object of the same type.");
+                                    JOptionPane.showMessageDialog(null,"Please select object of the same type and level.");
                                 }
                                 break;
                             }
@@ -148,6 +150,9 @@ public class GameGGrid extends JPanel implements ItemListener{
                     generateNewElement(i);
                 }
             }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "You can only select one element");
         }
     }
     public void generateNewElement(int spot)
