@@ -4,6 +4,14 @@ public class Main {
     static MainGUI mg;
     public static void main(String[] args) {
         //Call all three frames
+        /*
+         * Please change the path of the file and images before running. 
+         * Includes: 
+         * - GameGTop
+         * - InstructionGUI
+         * - MainGBottom
+         * - MainGCenter
+         */
         Player player = new Player();
         
         ig = new IntroGUI(player);
