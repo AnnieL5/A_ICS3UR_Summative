@@ -14,9 +14,9 @@ public class InstructionGUI extends JFrame{
     public InstructionGUI()
     {
         setVisible(true);
-        setBounds(0,0,200,500);
+        setBounds(0,0,400,600);
         setLayout(new GridLayout(0,1));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
 
         //main page instructions
         try{

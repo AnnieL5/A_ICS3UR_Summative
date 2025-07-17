@@ -13,7 +13,7 @@ public class GameGUI extends JFrame{
     public GameGUI(Player player){
         setBounds(0,0,1000,600);
         setLayout(new BorderLayout());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
 
         //Create panel objects
         tp = new GameGTop(player);

@@ -61,7 +61,7 @@ public class Player {
 
     public String toString()
     {
-        return "\t Player "+ name+":\t      Level: " +level+ "\t    Maple Leaves:" +mapleLeaves+ "\t     Money: "+money;
+        return "\t Player "+ name+":\t\t          Level: " +level+ "\t\t        Maple Leaves:" +mapleLeaves+ "\t\t         Money: "+money;
     }
 }
 

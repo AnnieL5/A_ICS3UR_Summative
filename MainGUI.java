@@ -1,5 +1,5 @@
 
-import java.awt.BorderLayout;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -35,5 +35,7 @@ public class MainGUI extends JFrame{
     public static void topLabelSetText()
     {
         topLabel.setText(MainGUI.player.toString());
+        topLabel.setFont(new Font("Serif", Font.BOLD, 20));
+
     }
 }

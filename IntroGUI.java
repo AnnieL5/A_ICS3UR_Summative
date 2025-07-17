@@ -30,7 +30,7 @@ public class IntroGUI extends JFrame implements ActionListener{
         setBounds(0,0,500,500);
         //setVisible(true);
         setLayout(new BorderLayout());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
 
         this.player = player;
         
