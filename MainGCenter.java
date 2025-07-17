@@ -1,5 +1,5 @@
 
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -28,6 +28,7 @@ public class MainGCenter extends JPanel{
     private static BufferedImage[] image;
     private JLabel[] label;
     private JLabel jLabel;
+    private static Image[] scaled_img;
 
     public MainGCenter(Player player)
     {
@@ -37,6 +38,7 @@ public class MainGCenter extends JPanel{
 
         image = new BufferedImage[NUM];
         label = new JLabel[NUM];
+        scaled_img = new Image[NUM];
 
         //Label image
         jLabel = new JLabel();
@@ -44,8 +46,10 @@ public class MainGCenter extends JPanel{
         {
             try{
             image[i] = ImageIO.read(new File(FILEPATH[i]));
-            label[i] = new JLabel(new ImageIcon(image[i]));
-            label[i].setBounds(0,0,100,200);
+            //label[i] = new JLabel(new ImageIcon(image[i]));
+            Image dimg = image[i].getScaledInstance(900, 600, Image.SCALE_SMOOTH);
+            scaled_img[i] = dimg;
+            //label[i].setBounds(0,0,100,200);
             }
             catch(IOException e){
                 System.out.println(e);
@@ -56,6 +60,6 @@ public class MainGCenter extends JPanel{
     }
     //Renew image
     public void switchImage(Player player){
-        jLabel.setIcon(new ImageIcon(image[player.getValue("level")-1]));
+        jLabel.setIcon(new ImageIcon(scaled_img[player.getValue("level")-1]));
     }
 }

@@ -3,6 +3,8 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -58,10 +60,19 @@ public class IntroGUI extends JFrame implements ActionListener{
         textInput = new JTextField("Input your name");
         center.add(textInput);
 
+        textInput.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                textInput.setText("");
+                textInput.removeFocusListener(this);
+            }
+        });
+
         next = new JButton("Next");
         next.addActionListener(this);
         center.add(next);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == infoButton)
