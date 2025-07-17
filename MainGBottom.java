@@ -22,7 +22,7 @@ public class MainGBottom extends JPanel{
 
         //Read text from file
         try {
-            fr = new FileReader("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\Story.txt");
+            fr = new FileReader("Story.txt");
             br = new BufferedReader(fr);
             for(int i = 0; i<LINE; i++)
             {

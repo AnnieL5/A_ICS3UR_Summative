@@ -20,7 +20,7 @@ public class InstructionGUI extends JFrame{
 
         //main page instructions
         try{
-        main = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\mainIns.png"));
+        main = ImageIO.read(new File("images/mainIns.png"));
         JLabel picLabel = new JLabel(new ImageIcon(main));
         picLabel.setBounds(0,0,100,200);
         this.add(picLabel);
@@ -31,7 +31,7 @@ public class InstructionGUI extends JFrame{
 
         //Game instruction
         try{
-            game = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\gameIns.png"));
+            game = ImageIO.read(new File("images/gameIns.png"));
             JLabel picLabel = new JLabel(new ImageIcon(game));
             picLabel.setBounds(0,0,100,200);
             this.add(picLabel);

@@ -11,11 +11,19 @@ import javax.swing.JPanel;
 
 
 public class MainGCenter extends JPanel{
-    private static final String[] FILEPATH = {"E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\1.jpg",
-    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\2.jpeg", 
-    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\3.jpg",
-    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\4.jpg", 
-    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\5.jpeg"};
+//    private static final String[] FILEPATH = {"E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\1.jpg",
+//    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\2.jpeg",
+//    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\3.jpg",
+//    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\4.jpg",
+//    "E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\5.jpeg"};
+
+    private static final String[] FILEPATH = {"images/1.jpg",
+            "images/2.jpeg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpeg"};
+
+
     private final int NUM = FILEPATH.length;//number of pictures
     private static BufferedImage[] image;
     private JLabel[] label;

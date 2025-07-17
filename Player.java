@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Player {
     private int mapleLeaves;
@@ -41,6 +41,7 @@ public class Player {
                          System.out.println("Increment by " +amount+ ", "+ type+ " is now "+level);
                          if(level >= 5){
                             JOptionPane.showMessageDialog(null, "<html>Congradulation!"+MainGBottom.getEnding());
+                            System.exit(0);
                          }
                          break;
             default: System.out.println("Wrong type.");

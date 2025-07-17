@@ -25,7 +25,7 @@ public class GameGTop extends JPanel{
         GameGTop.player = player;
         //Profile picture
         try{
-        pProfileP = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\player.png"));
+        pProfileP = ImageIO.read(new File("images/player.png"));
         JLabel picLabel = new JLabel(new ImageIcon(pProfileP));
         picLabel.setBounds(0,0,50,50);
         this.add(picLabel);
@@ -41,7 +41,7 @@ public class GameGTop extends JPanel{
 
         //Money icon
         try{
-        moneyIcon = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\money.png"));
+        moneyIcon = ImageIO.read(new File("images/money.png"));
         JLabel picLabel = new JLabel(new ImageIcon(moneyIcon));
         picLabel.setBounds(0,0,100,200);
         this.add(picLabel);
@@ -55,7 +55,7 @@ public class GameGTop extends JPanel{
 
         //Maple leave icon
         try{
-        starIcon = ImageIO.read(new File("E:\\Annie\\Code\\Annie code\\Summative1\\A_Summative\\A_ICS3UR_Summative\\maple leaves.png"));
+        starIcon = ImageIO.read(new File("images/maple leaves.png"));
         JLabel picLabel = new JLabel(new ImageIcon(starIcon));
         picLabel.setBounds(0,0,100,200);
         this.add(picLabel);
