@@ -17,6 +17,9 @@ public class Player {
         mapleLeaves = 0;
         money = 150;
         level = 1;
+        if(name.equals("GOD")){
+            money = 1000000;
+        }
     }
 
     public void setName(String name){
@@ -34,8 +37,13 @@ public class Player {
                          GameGTop.setMapleLeavesLabel();
                          break;
             case "money": money+=amount;
-                         System.out.println("Increment by " +amount+ ", "+ type+ " is now "+money);
-                         GameGTop.setMoneyLabel();
+                         if(money<0){
+                             JOptionPane.showMessageDialog(null, "<html>Sorry you don't have any money left QAQ. Exit to replay the game");
+                             money = 0;
+                         } else {
+                             System.out.println("Increment by " + amount + ", " + type + " is now " + money);
+                             GameGTop.setMoneyLabel();
+                         }
                          break;
             case "level": level+=amount;
                          System.out.println("Increment by " +amount+ ", "+ type+ " is now "+level);
