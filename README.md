@@ -1,11 +1,19 @@
-# Do you know that Indigenous people are receiving a lack of education? 
+# Do you know that Indigenous girls are receiving a lack of education? 
 
-Indigenous Helper, a Computer Science course summative project created in 2024, aims to raise awareness and execute changes about Indigenous issues.
+Stronger together, a Computer Science course summative project created in 2024, aims to raise awareness and execute changes about numerous challenges faced by Indigenous girls.
+
+It is a survival exploration game where the player experiences and tackles the challenges rooted in real issues, e.g., access to clean water, education, unsafe travel routes, food scarcity, or access to medical help.
+
+This game
+- raise awareness for supporting Indigenous girls
+- combine storytelling, empathy-building, and problem-solving
+- educates and inspires players to take meaningful action
+- builds awareness of resilience and systemic issues Indigenous girls face.
 
 ### Mission
 To do this, players could build schools and public institutes to reestablish communities and fix the issues by helping community members and combining building blocks that stimulate the actual process. Players could not only experience the difficult life of Indigenous people but also figure out a way to assist them and make the community prosperous. 
 
-By playing the game, it is wished that all the players could notice the occurring issues and advocate for changes in the real world
+By playing the game, it is hoped that all the players could notice the occurring issues and advocate for changes in the real world
 
 ## Aspects of the project
 - **Intro Panel**: The introduction panel is a welcome page for the player to enter their name.
